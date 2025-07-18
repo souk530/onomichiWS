@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防災ワークショップアプリ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>防災ワークショップ</h1>
+        
+        <!-- 災害選択ページ -->
+        <div id="disaster-page" class="page active">
+            <h2>数字を選んでください</h2>
+            <div class="cards-container">
+                <div class="card disaster-card" data-disaster="1">
+                    <div class="card-number">1</div>
+                </div>
+                <div class="card disaster-card" data-disaster="2">
+                    <div class="card-number">2</div>
+                </div>
+                <div class="card disaster-card" data-disaster="3">
+                    <div class="card-number">3</div>
+                </div>
+                <div class="card disaster-card" data-disaster="4">
+                    <div class="card-number">4</div>
+                </div>
+                <div class="card disaster-card" data-disaster="5">
+                    <div class="card-number">5</div>
+                </div>
+                <div class="card disaster-card" data-disaster="6">
+                    <div class="card-number">6</div>
+                </div>
+            </div>
+            <div id="selected-disaster" class="selected-disaster hidden">
+                <img id="disaster-image" src="" alt="">
+                <p id="disaster-name"></p>
+            </div>
+            <button id="disaster-next" class="next-btn" disabled>次へ</button>
+        </div>
+
+        <!-- キャラクター選択ページ -->
+        <div id="character-page" class="page">
+            <h2>キャラクターを選んでください</h2>
+            <div class="cards-container">
+                <div class="card character-card" data-character="1">
+                    <div class="card-number">1</div>
+                </div>
+                <div class="card character-card" data-character="2">
+                    <div class="card-number">2</div>
+                </div>
+                <div class="card character-card" data-character="3">
+                    <div class="card-number">3</div>
+                </div>
+                <div class="card character-card" data-character="4">
+                    <div class="card-number">4</div>
+                </div>
+            </div>
+            <div id="selected-character" class="selected-character hidden">
+                <img id="character-image" src="" alt="">
+                <h3 id="character-name"></h3>
+                <p id="character-description"></p>
+            </div>
+            <button id="character-next" class="next-btn" disabled>次へ</button>
+        </div>
+
+        <!-- アイテム選択ページ -->
+        <div id="item-page" class="page">
+            <h2>アイテムを3つ選んでください</h2>
+            <div class="selected-count">
+                <span id="selected-count">0</span> / 3 個選択中
+            </div>
+            <div class="cards-container" id="item-cards">
+            </div>
+            <button id="item-next" class="next-btn" disabled>次へ</button>
+        </div>
+
+        <!-- 最終ページ -->
+        <div id="final-page" class="page">
+            <h2>あなたの選択</h2>
+            <div class="summary">
+                <div class="summary-item">
+                    <h3>災害</h3>
+                    <div id="final-disaster"></div>
+                </div>
+                <div class="summary-item">
+                    <h3>キャラクター</h3>
+                    <div id="final-character"></div>
+                </div>
+                <div class="summary-item">
+                    <h3>アイテム</h3>
+                    <div id="final-items"></div>
+                </div>
+            </div>
+            <button id="restart-btn" class="restart-btn">終了</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
